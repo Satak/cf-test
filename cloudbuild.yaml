@@ -3,5 +3,5 @@ steps:
   args: ['install']
   dir: 'functions/autodeploy'
 - name: 'gcr.io/cloud-builders/gcloud'
-  args: ['functions', 'deploy', 'cf-test', '--trigger-http', '--runtime', 'python37', '--entry-point', 'main', '--source-url', 'https://source.cloud.google.com/sami-test-223217/github_Satak_cf-test']
+  args: ['functions', 'deploy', 'cf-test', '--trigger-http', '--runtime', 'python37', '--entry-point', 'main', '--source', 'https://source.cloud.google.com/sami-test-223217/github_Satak_cf-test']
   dir: 'functions/autodeploy'
