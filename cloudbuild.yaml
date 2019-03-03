@@ -1,4 +1,10 @@
 steps:
 - name: 'gcr.io/cloud-builders/gcloud'
-  args: ['functions', 'deploy', 'cf-test', '--trigger-http', '--runtime', 'python37', '--entry-point', 'main', '--source', 'https://source.developers.google.com/projects/sami-test-223217/repos/github_Satak_cf-test/moveable-aliases/master/paths/src']
+  args: [
+    'functions', 'deploy', 'cf-test', '--trigger-http',
+    '--runtime', 'python37',
+    '--entry-point', 'main',
+    '--source', 'https://source.developers.google.com/projects/sami-test-223217/repos/github_Satak_cf-test/moveable-aliases/master/paths/src',
+    '--region', 'europe-west1'
+  ]
   dir: 'functions/autodeploy'
