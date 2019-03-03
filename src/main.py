@@ -1,7 +1,7 @@
 from flask import jsonify
 import logging
 
-VERSION = 14
+VERSION = 15
 APP_NAME = 'cf-test'
 
 
