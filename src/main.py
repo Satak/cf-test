@@ -9,4 +9,4 @@ def modify_message(message):
 
 def main(request):
     message = request.args.get('message')
-    return jsonify({'message': modify_message(message), 'version': 12})
+    return jsonify({'message': modify_message(message), 'version': 13})
