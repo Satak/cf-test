@@ -5,6 +5,7 @@ steps:
     '--runtime', 'python37',
     '--entry-point', 'main',
     '--source', 'https://source.developers.google.com/projects/$PROJECT_ID/repos/$_REPOSITORY/moveable-aliases/master/paths/src',
-    '--region', '$_REGION'
+    '--region', '$_REGION',
+    '--set-env-vars', 'TOKEN=$_TOKEN'
   ]
   dir: 'functions/autodeploy'
