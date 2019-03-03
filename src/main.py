@@ -1,4 +1,5 @@
 from flask import jsonify
+import logging
 
 
 def modify_message(message):
@@ -8,5 +9,6 @@ def modify_message(message):
 
 
 def main(request):
+    logging.info('LOG ENTRY')
     message = request.args.get('message')
     return jsonify({'message': modify_message(message), 'version': 13})
