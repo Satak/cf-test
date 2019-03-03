@@ -2,18 +2,17 @@ from flask import jsonify
 import logging
 
 VERSION = 14
+APP_NAME = 'cf-test'
 
 
-def modify_message(message):
+def modify_message(message, request):
     if not message:
+        logging.error(f'{APP_NAME}_APP_ERROR: Empty message. IP: {request.remote_addr}')
         return 'Your message was empty'
+    logging.info(f'{APP_NAME}_APP_INFO: Message == {message}')
     return f'Your message was {message}'
 
 
 def main(request):
-    logging.info('LOG Info ENTRY')
-    logging.warning('Warning entry')
-    logging.debug('Debug entry')
-    logging.error('Error entry')
     message = request.args.get('message')
-    return jsonify({'message': modify_message(message), 'version': VERSION})
+    return jsonify({'message': modify_message(message, request), 'version': VERSION})
